@@ -1,0 +1,275 @@
+[
+  {
+    "time": "2026-10-25 17:37:36",
+    "method": "GET",
+    "url": "http://example.com",
+    "status": 200,
+    "elapsed_ms": 422.13
+  },
+  {
+    "time": "2026-10-25 17:41:48",
+    "method": "POST",
+    "url": "http://localhost:8080/echo",
+    "status": 200,
+    "elapsed_ms": 15.62
+  },
+  {
+    "time": "2026-10-25 17:51:09",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 2.62
+  },
+  {
+    "time": "2026-10-25 17:51:10",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 0.76
+  },
+  {
+    "time": "2026-10-25 17:51:10",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 14.72
+  },
+  {
+    "time": "2026-10-25 17:51:10",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 0.7
+  },
+  {
+    "time": "2026-10-25 17:51:10",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 21.71
+  },
+  {
+    "time": "2026-10-25 17:51:12",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 11.91
+  },
+  {
+    "time": "2026-10-25 17:51:13",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 0.65
+  },
+  {
+    "time": "2026-10-25 17:51:13",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 0.65
+  },
+  {
+    "time": "2026-10-25 17:51:13",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 0.64
+  },
+  {
+    "time": "2026-10-25 17:51:13",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 25.41
+  },
+  {
+    "time": "2026-10-25 17:51:13",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 10.55
+  },
+  {
+    "time": "2026-10-25 17:51:14",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 23.25
+  },
+  {
+    "time": "2026-10-25 17:51:14",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 22.73
+  },
+  {
+    "time": "2026-10-25 17:51:14",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 21.41
+  },
+  {
+    "time": "2026-10-25 17:51:15",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 0.66
+  },
+  {
+    "time": "2026-10-25 17:51:15",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 11.08
+  },
+  {
+    "time": "2026-10-25 17:51:15",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 17.98
+  },
+  {
+    "time": "2026-10-25 17:51:16",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 23.37
+  },
+  {
+    "time": "2026-10-25 17:51:16",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 10.78
+  },
+  {
+    "time": "2026-10-25 17:51:16",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 23.53
+  },
+  {
+    "time": "2026-10-25 17:51:16",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 22.3
+  },
+  {
+    "time": "2026-10-25 17:51:16",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 0.68
+  },
+  {
+    "time": "2026-10-25 17:51:16",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 14.86
+  },
+  {
+    "time": "2026-10-25 17:51:16",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 12.61
+  },
+  {
+    "time": "2026-10-25 17:51:16",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 0.74
+  },
+  {
+    "time": "2026-10-25 17:51:17",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 21.42
+  },
+  {
+    "time": "2026-10-25 17:51:17",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 0.72
+  },
+  {
+    "time": "2026-10-25 17:51:17",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 12.85
+  },
+  {
+    "time": "2026-10-25 17:51:17",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 13.26
+  },
+  {
+    "time": "2026-10-25 17:51:17",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 23.19
+  },
+  {
+    "time": "2026-10-25 17:51:18",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 23.85
+  },
+  {
+    "time": "2026-10-25 17:51:18",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 13.06
+  },
+  {
+    "time": "2026-10-25 17:51:18",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 0.78
+  },
+  {
+    "time": "2026-10-25 17:51:18",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 17.45
+  },
+  {
+    "time": "2026-10-25 17:51:18",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 0.67
+  },
+  {
+    "time": "2026-10-25 17:51:18",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 17.87
+  },
+  {
+    "time": "2026-10-25 17:51:19",
+    "method": "GET",
+    "url": "http://localhost:8080/",
+    "status": 200,
+    "elapsed_ms": 12.81
+  }
+]

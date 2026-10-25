@@ -48,3 +48,14 @@ def test_url_empty_or_unsupported_scheme():
         Url.parse("")
     with pytest.raises(ParseError):
         Url.parse("ftp://files.com/doc")
+
+def test_url_with_root_query():
+    u = Url.parse("http://localhost?debug=true")
+    assert u.path == "/"
+    assert u.query == "debug=true"
+    assert u.full_path == "/?debug=true"
+
+
+def test_url_missing_host_raises():
+    with pytest.raises(ParseError):
+        Url.parse("http:///path")
