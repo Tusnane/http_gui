@@ -18,65 +18,67 @@ HISTORY_FILE = Path("history.json")
 
 
 class ClientTab(ttk.Frame):
-    """Вкладка HTTP-клиента."""
+    """Вкладка HTTP-клиента в стиле Telegram."""
 
     def __init__(self, parent, get_timeout_ms: Callable[[], int]):
-        super().__init__(parent, padding=10)
+        super().__init__(parent, padding=12)
         self.get_timeout_ms = get_timeout_ms
         self.result_queue: queue.Queue = queue.Queue()
         self._build_ui()
         self._poll_queue()
 
     def _build_ui(self) -> None:
-        # Верхняя панель: Метод, URL, Отправить, Очистить
         top = ttk.Frame(self)
-        top.pack(fill=tk.X, pady=(0, 8))
+        top.pack(fill=tk.X, pady=(0, 10))
 
         ttk.Label(top, text="Метод:").pack(side=tk.LEFT)
         self.method_var = tk.StringVar(value="GET")
         self.method_combo = ttk.Combobox(
             top, textvariable=self.method_var, values=["GET", "POST"], width=8, state="readonly"
         )
-        self.method_combo.pack(side=tk.LEFT, padx=5)
+        self.method_combo.pack(side=tk.LEFT, padx=6)
         self.method_combo.bind("<<ComboboxSelected>>", self._on_method_change)
 
         ttk.Label(top, text="URL:").pack(side=tk.LEFT)
         self.url_var = tk.StringVar(value="http://localhost:8080/")
         self.url_entry = ttk.Entry(top, textvariable=self.url_var)
-        self.url_entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5)
+        self.url_entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=6)
 
         self.send_btn = ttk.Button(top, text="Отправить", command=self.send_request)
-        self.send_btn.pack(side=tk.LEFT, padx=3)
+        self.send_btn.pack(side=tk.LEFT, padx=4)
 
         self.clear_btn = ttk.Button(top, text="Очистить", command=self.clear_all)
-        self.clear_btn.pack(side=tk.LEFT, padx=3)
+        self.clear_btn.pack(side=tk.LEFT, padx=4)
 
         self.spinner_var = tk.StringVar(value="Готов")
-        self.spinner_lbl = ttk.Label(top, textvariable=self.spinner_var, width=16, anchor="e")
-        self.spinner_lbl.pack(side=tk.RIGHT, padx=5)
+        self.spinner_lbl = ttk.Label(top, textvariable=self.spinner_var, width=16, anchor="e", foreground="#769fc0")
+        self.spinner_lbl.pack(side=tk.RIGHT, padx=6)
 
         # Заголовки запроса
-        hdr_box = ttk.LabelFrame(self, text="Заголовки запроса", padding=5)
-        hdr_box.pack(fill=tk.X, pady=4)
+        hdr_box = ttk.LabelFrame(self, text=" Заголовки запроса ", padding=8)
+        hdr_box.pack(fill=tk.X, pady=6)
         self.header_table = HeaderTable(hdr_box)
         self.header_table.pack(fill=tk.X)
 
-        # Тело запроса (активно только для POST)
-        body_box = ttk.LabelFrame(self, text="Тело запроса (активно только для POST)", padding=5)
-        body_box.pack(fill=tk.X, pady=4)
-        self.req_body_text = tk.Text(body_box, height=4, font=("Consolas", 10))
+        # Тело запроса
+        body_box = ttk.LabelFrame(self, text=" Тело запроса (только для POST) ", padding=8)
+        body_box.pack(fill=tk.X, pady=6)
+        self.req_body_text = tk.Text(
+            body_box, height=4, font=("Consolas", 10), 
+            bg="#1e2c3a", fg="#f5f5f5", insertbackground="#ffffff", bd=0, highlightthickness=0
+        )
         self.req_body_text.pack(fill=tk.X)
         self._on_method_change()
 
-        # Область ответа
-        resp_box = ttk.LabelFrame(self, text="Ответ сервера", padding=5)
-        resp_box.pack(fill=tk.BOTH, expand=True, pady=4)
+        # Ответ сервера
+        resp_box = ttk.LabelFrame(self, text=" Ответ сервера ", padding=8)
+        resp_box.pack(fill=tk.BOTH, expand=True, pady=6)
 
         status_bar = ttk.Frame(resp_box)
-        status_bar.pack(fill=tk.X, pady=(0, 5))
+        status_bar.pack(fill=tk.X, pady=(0, 6))
         ttk.Label(status_bar, text="Статус:").pack(side=tk.LEFT)
         self.status_var = tk.StringVar(value="—")
-        ttk.Label(status_bar, textvariable=self.status_var, font=("Segoe UI", 10, "bold")).pack(
+        ttk.Label(status_bar, textvariable=self.status_var, font=("Segoe UI", 10, "bold"), foreground="#4bb543").pack(
             side=tk.LEFT, padx=8
         )
 
@@ -85,21 +87,27 @@ class ClientTab(ttk.Frame):
 
         hdr_resp_frame = ttk.Frame(paned)
         ttk.Label(hdr_resp_frame, text="Заголовки ответа:").pack(anchor="w")
-        self.resp_headers_text = tk.Text(hdr_resp_frame, height=5, font=("Consolas", 9))
-        self.resp_headers_text.pack(fill=tk.BOTH, expand=True)
+        self.resp_headers_text = tk.Text(
+            hdr_resp_frame, height=4, font=("Consolas", 9), 
+            bg="#1e2c3a", fg="#f5f5f5", insertbackground="#ffffff", bd=0, highlightthickness=0
+        )
+        self.resp_headers_text.pack(fill=tk.BOTH, expand=True, pady=(2, 0))
         paned.add(hdr_resp_frame, weight=1)
 
         body_resp_frame = ttk.Frame(paned)
         ttk.Label(body_resp_frame, text="Тело ответа (JSON / HTML / Текст):").pack(anchor="w")
-        self.resp_body_text = tk.Text(body_resp_frame, height=10, font=("Consolas", 10))
-        self.resp_body_text.pack(fill=tk.BOTH, expand=True)
+        self.resp_body_text = tk.Text(
+            body_resp_frame, height=8, font=("Consolas", 10), 
+            bg="#1e2c3a", fg="#f5f5f5", insertbackground="#ffffff", bd=0, highlightthickness=0
+        )
+        self.resp_body_text.pack(fill=tk.BOTH, expand=True, pady=(2, 0))
         paned.add(body_resp_frame, weight=3)
 
     def _on_method_change(self, _event=None) -> None:
         if self.method_var.get() == "POST":
-            self.req_body_text.configure(state=tk.NORMAL, background="white")
+            self.req_body_text.configure(state=tk.NORMAL, bg="#1e2c3a")
         else:
-            self.req_body_text.configure(state=tk.DISABLED, background="#f0f0f0")
+            self.req_body_text.configure(state=tk.DISABLED, bg="#131a22")
 
     def clear_all(self) -> None:
         self.url_var.set("")
